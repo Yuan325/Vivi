@@ -1,6 +1,8 @@
 # VIVI
 
-<img src="/assets/vivi.png" alt="image of vivi" width=200>
+<img src="/assets/vivi.png" alt="image of vivi" width=200> 
+
+###### my little art of vivi (through illustrator + photoshop)
 
 Vivi is a voicebot based virtual assistant inspired by JARVIS
 
@@ -8,7 +10,8 @@ My initial thought of this project is to model or improve a NLU process that wil
 
 These ideas were great, but it is not very feasible with my short amount of time (given by myself). Therefore, I decided to utilize the current resources that are available and make a 'quick' and 'dirty' vivi bot.
 
-Stages of vivi:
+
+## Stages of vivi:
 - [x] Create a base program for vivi
 - [x] Connecting to a database
 - [x] Connecting to Dialogflow
