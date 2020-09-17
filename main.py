@@ -34,4 +34,5 @@ def assistant(command):
 #databaseExecute(cur, 'SELECT 2+2');
 #cur.close()
 
+# can create a loop in order to constantly get prepared for tasks
 assistant(myCommand())
