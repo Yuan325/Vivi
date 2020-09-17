@@ -1,8 +1,6 @@
 #project ID: vivi-ysjylu
 import os
-
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/Yuan/Desktop/Files/tensorflow/Vivi/Vivi-fb0a374c6045.json"
-
 
 def detect_intent_texts(project_id, session_id, texts, language_code):
     """Returns the result of detect intent with texts as inputs.
@@ -71,7 +69,7 @@ def detect_intent_with_texttospeech_response(project_id, session_id, texts,
             response.query_result.fulfillment_text))
         
         action = response.query_result.action
-        parameter = response.query_result.parameters.fields.get('domain').string_value
+        parameter = response.query_result.parameters.fields
 
         #https://realpython.com/playing-and-recording-sound-python/#pyaudio
         # The response's audio_content is binary.
@@ -82,8 +80,3 @@ def detect_intent_with_texttospeech_response(project_id, session_id, texts,
         play_obj.wait_done()
 
         return action, parameter
-
-
-
-#detect_intent_texts("vivi-ysjylu", 123456789, ["hello"], "en-US")
-#detect_intent_with_texttospeech_response("vivi-ysjylu", 123456789, ["open youtube"], "en-US")

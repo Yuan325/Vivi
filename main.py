@@ -2,7 +2,7 @@ import os
 import speech_recognition as sr
 from databaseQuery import connect, databaseExecute
 from dialogflow import detect_intent_with_texttospeech_response
-
+from tasks import take_query
 
 def viviResponse(audio):
     print(audio)
@@ -14,7 +14,7 @@ def myCommand():
     with sr.Microphone() as source:
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source, duration=2)
-        print('Say something...')
+        viviResponse('Anything that I can help?')
         audio = r.listen(source)
         print('here...')
     try:
@@ -27,20 +27,11 @@ def myCommand():
     return command
 
 def assistant(command):
-    #viviResponse('Hi ' + command + '. nice to meet you.')
     action, parameter = detect_intent_with_texttospeech_response("vivi-ysjylu", 123456789, [command], "en-US")
-    print(action)
-    print(parameter)
-    #run dialogflow to process
-    #get feedback and run logic (virtual assistant)
-
-def choices(action, parameter):
-    #bunch of if statement :)
-    return
+    take_query(action,parameter)
 
 #cur = connect()
 #databaseExecute(cur, 'SELECT 2+2');
-#viviResponse('I am vivi. What is your name?')
-assistant("open google")
-#assistant(myCommand())
 #cur.close()
+
+assistant(myCommand())
