@@ -15,12 +15,13 @@ These ideas were great, but it is not very feasible with my short amount of time
 - [x] Create a base program for vivi
 - [x] Connecting to a database
 - [x] Connecting to Dialogflow
-- [ ] Provide task specific functions
+- [x] Provide task specific functions
 
 
 
 ### Create a base program for Vivi
 Main purpose of this first part was to create a base program that will be able to listen (microphone), and convert it into text (SpeechRecognition library).
+Currently, the code is made to just take 1 single command. A loop can be created easily for the system to get "ready" for commands anytime.
 
 Code used: `main.py`
 
